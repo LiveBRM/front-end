@@ -1,5 +1,29 @@
 <template>
-    <div id="register" class="rounded bg-light login">
+    <businessDetails></businessDetails>
+</template>
+
+<script>
+import businessDetails from "@/components/BusinessDetails.vue";
+
+export default {
+  name: "register",
+  data () {
+    return {
+      email: '',
+      user: '',
+      password: '',
+      confirmPassword: '',
+    }
+  },
+  components: {
+    businessDetails
+  }
+};
+</script>
+
+
+<!--
+<div id="register" class="rounded bg-light login">
       <div class="mb-3">
           <h3>Create Account</h3>
         </div>
@@ -25,18 +49,5 @@
         <router-link to="/login">Already have an account? Login here</router-link>
       </form>
     </div>    
-</template>
 
-<script>
-export default {
-  name: "register",
-  data () {
-    return {
-      email: '',
-      user: '',
-      password: '',
-      confirmPassword: '',
-    }
-  } 
-};
-</script>
+  -->
