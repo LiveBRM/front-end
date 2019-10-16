@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "login",
   data () {
@@ -30,10 +32,27 @@ export default {
       password: '',
     }
   },
+  postLogin(){
+    HTTP.post({
+      user: this.user,
+      password: this.password
+    })
+    .then(response => {})
+    .catch(e => {
+      this.errors.push(e)
+    })
+  },
   methods: {
     //http requests go here
   }
 };
+
+export const HTTP = axios.create({
+  baseURL: `USER URL`,
+  headers: {
+    Authorization: 'Bearer {token}'
+  }
+})
 </script>
 
 
