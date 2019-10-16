@@ -8,8 +8,9 @@ This is the front-end for LiveBRM Community Edition
 - Navigate to /front-end/livebrm/
 - ``` npm install ``` To install dependencies
 - ``` npm run serve ``` To run the application on localhost port 8080
-- ``` npm run build ``` Compiles and minifies for production
-- ``` npm run lint ``` Lints and fixes files
+- Extras
+  - ``` npm run build ``` Compiles and minifies for production
+  - ``` npm run lint ``` Lints and fixes files
 
 ### Features
  - Customer Resource Management
