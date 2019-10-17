@@ -2,7 +2,7 @@
   <div class="container mb-5">
     <div class="wrapper">
       <ol class="ProgressBar">
-        <li class="ProgressBar-step" :class="{ 'is-complete': isComplete('1')}">
+        <li class="ProgressBar-step is-complete">
           <svg class="ProgressBar-icon"><use xlink:href="#checkmark-bold"/></svg>
           <span class="ProgressBar-stepLabel"> Business Info</span>
         </li>
@@ -12,7 +12,7 @@
         </li>
         <li class="ProgressBar-step" :class="{ 'is-complete': isComplete('3')}">
           <svg class="ProgressBar-icon"><use xlink:href="#checkmark-bold"/></svg>
-          <span class="ProgressBar-stepLabel">Create Regular User</span>
+          <span class="ProgressBar-stepLabel">Regular User</span>
         </li>
       </ol>
     </div>
@@ -28,19 +28,20 @@ export default {
   methods: {
     isComplete: function(inputStep) {
       if(inputStep === '1'){
-        if(this.stepNum === "/register/1" || this.stepNum === "/register/2/" || this.stepNum === "/register/3/"){
+        if(this.stepNum === "" || this.stepNum === "/register/" || this.stepNum.includes("1") || this.stepNum.includes("2") || this.stepNum.includes("3")){
           return true
         }else{
           return false
         }
       }else if (inputStep === '2'){
-        if(this.stepNum === "/register/2/" || this.stepNum === "/register/3/"){
+        console.log(this.stepNum)
+        if(this.stepNum.includes('2') || this.stepNum.includes("3")){
           return true
         }else{
           false
         }
       }else if (inputStep === '3'){
-        if(this.stepNum === "/register/3/"){
+        if(this.stepNum.includes("3")){
           return true
         }else{
           return false

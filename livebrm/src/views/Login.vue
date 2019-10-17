@@ -1,41 +1,43 @@
 <template>
-  <div id="login" class="rounded bg-light login">
-    <form id="form">
-      <div class="form-group">
-        <label for="usernameInput">Username</label>
-        <input
-          v-model="user"
-          type="username"
-          class="form-control"
-          id="usernameInput"
-          aria-describedby="userHelp"
-          placeholder="Enter username"
-        />
-        <small id="userHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        >
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input
-          v-model="password"
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Password"
-        />
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="emailCheck" />
-        <label class="form-check-label" for="emailCheck"
-          >Remember email address</label
-        >
-      </div>
-      <button type="submit" class="btn btn-primary mb-2">Login</button>
-      <br />
-      <router-link to="/register">Don't have an account?</router-link>
-    </form>
-  </div>
+  <div class="container">
+    <div class="rounded bg-light login">
+      <form id="form">
+        <div class="form-group">
+          <label for="usernameInput">Username</label>
+          <input
+            v-model="user"
+            type="username"
+            class="form-control"
+            id="usernameInput"
+            aria-describedby="userHelp"
+            placeholder="Enter username"
+          />
+          <small id="userHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            v-model="password"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="emailCheck" />
+          <label class="form-check-label" for="emailCheck"
+            >Remember email address</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Login</button>
+        <br />
+        <router-link to="/register">Create New Account</router-link>
+      </form>
+    </div>
+  </div> 
 </template>
 
 <script>
@@ -99,7 +101,7 @@ export const HTTP = axios.create({
   .login {
     margin: 0 auto;
     height: 40%;
-    width: 50%;
+    width: 60%;
     padding: 30px 30px;
   }
 }
@@ -108,8 +110,8 @@ export const HTTP = axios.create({
 @media only screen and (min-width: 992px) {
   .login {
     margin: 0 auto;
-    height: 35%;
-    width: 40%;
+    height: 40%;
+    width: 55%;
     padding: 30px 30px;
   }
 }
@@ -118,12 +120,11 @@ export const HTTP = axios.create({
 @media only screen and (min-width: 1200px) {
   .login {
     margin: 0 auto;
-    height: 30%;
-    width: 30%;
+    height: 40%;
+    width: 45%;
     padding: 30px 30px;
   }
 }
-
 #form {
   margin: auto;
 }
