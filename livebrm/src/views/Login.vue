@@ -1,46 +1,63 @@
 <template>
-    <div id="login" class="rounded bg-light login">
-      <form id="form">
-        <div class="form-group">
-          <label for="usernameInput">Username</label>
-          <input v-model="user" type="username" class="form-control" id="usernameInput" aria-describedby="userHelp" placeholder="Enter username">
-          <small id="userHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input v-model="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="emailCheck">
-          <label class="form-check-label" for="emailCheck">Remember email address</label>
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Login</button>
-        <br>
-        <router-link to="/register">Don't have an account?</router-link>
-      </form>
-    </div>
+  <div id="login" class="rounded bg-light login">
+    <form id="form">
+      <div class="form-group">
+        <label for="usernameInput">Username</label>
+        <input
+          v-model="user"
+          type="username"
+          class="form-control"
+          id="usernameInput"
+          aria-describedby="userHelp"
+          placeholder="Enter username"
+        />
+        <small id="userHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          v-model="password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+        />
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="emailCheck" />
+        <label class="form-check-label" for="emailCheck"
+          >Remember email address</label
+        >
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Login</button>
+      <br />
+      <router-link to="/register">Don't have an account?</router-link>
+    </form>
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   name: "login",
-  data () {
+  data() {
     return {
-      user: '',
-      password: '',
-    }
+      user: "",
+      password: ""
+    };
   },
-  postLogin(){
+  postLogin() {
     HTTP.post({
       user: this.user,
       password: this.password
     })
-    .then(response => {})
-    .catch(e => {
-      this.errors.push(e)
-    })
+      .then(response => {})
+      .catch(e => {
+        this.errors.push(e);
+      });
   },
   methods: {
     //http requests go here
@@ -50,11 +67,10 @@ export default {
 export const HTTP = axios.create({
   baseURL: `USER URL`,
   headers: {
-    Authorization: 'Bearer {token}'
+    Authorization: "Bearer {token}"
   }
-})
+});
 </script>
-
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
@@ -100,7 +116,7 @@ export const HTTP = axios.create({
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-.login {
+  .login {
     margin: 0 auto;
     height: 30%;
     width: 30%;
@@ -108,7 +124,7 @@ export const HTTP = axios.create({
   }
 }
 
-#form{
+#form {
   margin: auto;
 }
 </style>

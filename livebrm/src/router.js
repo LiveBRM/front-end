@@ -2,7 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
-import Register from "./views/Register.vue"
+import Register from "./views/Register.vue";
+import BusinessDetails from "./components/BusinessDetails.vue"
 
 Vue.use(Router);
 
@@ -35,7 +36,11 @@ export default new Router({
     {
       path: "/register",
       name: "register",
-      component: Register
+      component: Register,
+      children: [
+        {path: '', component: BusinessDetails},
+        {path: '1', component: BusinessDetails}
+      ]
     }
   ]
 });
