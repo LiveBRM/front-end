@@ -1,6 +1,6 @@
 <template>
   <div>
-    <progressCircles></progressCircles>
+    <progressCircles :stepNum="step"></progressCircles>
     <router-view></router-view>
   </div>
 </template>
@@ -15,8 +15,17 @@ export default {
       email: "",
       user: "",
       password: "",
-      confirmPassword: ""
+      confirmPassword: "",
+      step: ""
     };
+  },
+  created(){
+    this.step = this.$route.path;
+    console.log(this.step);
+  },
+  updated() {
+    this.step = this.$route.path;
+    console.log(this.step);
   },
   components: {
     progressCircles

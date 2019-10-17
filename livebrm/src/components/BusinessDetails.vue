@@ -1,3 +1,4 @@
+<!--ADD NEW HORIZONTAL FORM ON BOOTSTRAP-->
 <template>
   <div id="businessDetails" class="rounded bg-light login">
     <div class="mb-3">
@@ -32,7 +33,7 @@
             type="username"
             class="form-control"
             id="legalName"
-            placeholder="Enter legal name"
+            placeholder="Awesome DJ Company, LLC"
             />
           </div>
         </div>    
@@ -123,7 +124,9 @@
           >
         </div>
         <div class="col">
-          <button class="btn btn-primary advance">Next</button>
+          <router-link class="btn btn-primary advance" to="/register/2/">
+            Next
+          </router-link>
         </div>
       </div>
       <br />

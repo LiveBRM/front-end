@@ -3,7 +3,8 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
-import BusinessDetails from "./components/BusinessDetails.vue"
+import BusinessDetails from "./components/BusinessDetails.vue";
+import AdminDetails from "./components/AdminDetails.vue";
 
 Vue.use(Router);
 
@@ -39,7 +40,8 @@ export default new Router({
       component: Register,
       children: [
         {path: '', component: BusinessDetails},
-        {path: '1', component: BusinessDetails}
+        {path: '1', component: BusinessDetails},
+        {path: '2', component: AdminDetails}
       ]
     }
   ]

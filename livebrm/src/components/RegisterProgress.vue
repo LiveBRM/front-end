@@ -2,15 +2,15 @@
   <div class="container mb-5">
     <div class="wrapper">
       <ol class="ProgressBar">
-        <li class="ProgressBar-step is-current">
+        <li class="ProgressBar-step" :class="{ 'is-complete': isComplete('1')}">
           <svg class="ProgressBar-icon"><use xlink:href="#checkmark-bold"/></svg>
           <span class="ProgressBar-stepLabel"> Business Info</span>
         </li>
-        <li class="ProgressBar-step">
+        <li class="ProgressBar-step" :class="{ 'is-complete': isComplete('2')}">
           <svg class="ProgressBar-icon"><use xlink:href="#checkmark-bold"/></svg>
           <span class="ProgressBar-stepLabel">Admin User</span>
         </li>
-        <li class="ProgressBar-step">
+        <li class="ProgressBar-step" :class="{ 'is-complete': isComplete('3')}">
           <svg class="ProgressBar-icon"><use xlink:href="#checkmark-bold"/></svg>
           <span class="ProgressBar-stepLabel">Create Regular User</span>
         </li>
@@ -20,16 +20,33 @@
 </template>
 
 <script>
-
 export default {
   name: "progressCircles",
-  data() {
-    return {
-      step: 1
-    };
+  props: {
+   stepNum: String
   },
   methods: {
-    
+    isComplete: function(inputStep) {
+      if(inputStep === '1'){
+        if(this.stepNum === "/register/1" || this.stepNum === "/register/2/" || this.stepNum === "/register/3/"){
+          return true
+        }else{
+          return false
+        }
+      }else if (inputStep === '2'){
+        if(this.stepNum === "/register/2/" || this.stepNum === "/register/3/"){
+          return true
+        }else{
+          false
+        }
+      }else if (inputStep === '3'){
+        if(this.stepNum === "/register/3/"){
+          return true
+        }else{
+          return false
+        }
+      }
+    }
   }
 };
 </script>
