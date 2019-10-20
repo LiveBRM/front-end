@@ -37,7 +37,7 @@
         <router-link to="/register">Create New Account</router-link>
       </form>
     </div>
-  </div> 
+  </div>
 </template>
 
 <script>

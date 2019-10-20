@@ -19,7 +19,7 @@ export default {
       step: ""
     };
   },
-  created(){
+  created() {
     this.step = this.$route.path;
     console.log(this.step);
   },

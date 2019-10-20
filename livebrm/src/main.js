@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 Vue.config.productionTip = false;
 
+window.$ = require('jquery')
+
 new Vue({
   router,
   render: h => h(App)

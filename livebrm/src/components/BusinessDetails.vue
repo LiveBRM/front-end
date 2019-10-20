@@ -1,7 +1,10 @@
-<!--ADD NEW HORIZONTAL FORM ON BOOTSTRAP-->
 <template>
   <div class="container">
-    <div id="businessDetails" class="rounded bg-light login" style="width: 100%; max-width: 700px">
+    <div
+      id="businessDetails"
+      class="rounded bg-light login"
+      style="width: 100%; max-width: 700px"
+    >
       <div class="mb-3">
         <h3>Create Account</h3>
       </div>
@@ -13,12 +16,12 @@
             </div>
             <div class="col">
               <input
-              v-model="commonName"
-              type="username"
-              class="form-control"
-              id="commonNameInput"
-              aria-describedby="userHelp"
-              placeholder="Awesome DJ Company"
+                v-model="commonName"
+                type="username"
+                class="form-control"
+                id="commonNameInput"
+                aria-describedby="userHelp"
+                placeholder="Awesome DJ Company"
               />
             </div>
           </div>
@@ -28,14 +31,14 @@
             </div>
             <div class="col">
               <input
-              v-model="user"
-              type="username"
-              class="form-control"
-              id="legalName"
-              placeholder="Awesome DJ Company, LLC"
+                v-model="user"
+                type="username"
+                class="form-control"
+                id="legalName"
+                placeholder="Awesome DJ Company, LLC"
               />
             </div>
-          </div>    
+          </div>
         </div>
         <div class="form-group">
           <div class="row align-items-center">
@@ -43,11 +46,13 @@
               <label for="commmonNameInput">Contact Email</label>
             </div>
             <div class="col">
-              <input v-model="email"
+              <input
+                v-model="contactEmail"
                 type="email"
                 class="form-control"
                 id="email"
-                placeholder="contact@awesomedjcompany.com">
+                placeholder="contact@awesomedjcompany.com"
+              />
             </div>
           </div>
           <div class="row align-items-center">
@@ -55,11 +60,13 @@
               <label for="phoneNumber">Contact Phone</label>
             </div>
             <div class="col">
-              <input v-model="phoneNumber"
-              type="phoneNumber"
-              class="form-control"
-              id="phoneNumber"
-              placeholder="(555) 555-1234" />
+              <input
+                v-model="contactPhoneNumber"
+                type="phoneNumber"
+                class="form-control"
+                id="phoneNumber"
+                placeholder="(555) 555-1234"
+              />
             </div>
           </div>
         </div>
@@ -153,11 +160,21 @@ export default {
       stateOrProvince: "",
       postalCode: "",
       country: "",
-      email: "",
-      phoneNumber: "",
+      contactEmail: "",
+      contactPhoneNumber: "",
       emergencyContactPhone: "",
       normalBusinessPhone: ""
     };
+  },
+  methods: {
+    checkActive: function(){
+      if ( $('#email').is(":focus")) {
+        //send HTTP request to see if it's taken
+      }
+    }
+  },
+  updated() {
+    this.checkActive();
   }
 };
 </script>

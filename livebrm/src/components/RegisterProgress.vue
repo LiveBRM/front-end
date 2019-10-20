@@ -3,15 +3,27 @@
     <div class="wrapper">
       <ol class="ProgressBar">
         <li class="ProgressBar-step is-complete">
-          <svg class="ProgressBar-icon"><use xlink:href="#checkmark-bold"/></svg>
+          <svg class="ProgressBar-icon">
+            <use xlink:href="#checkmark-bold" />
+          </svg>
           <span class="ProgressBar-stepLabel"> Business Info</span>
         </li>
-        <li class="ProgressBar-step" :class="{ 'is-complete': isComplete('2')}">
-          <svg class="ProgressBar-icon"><use xlink:href="#checkmark-bold"/></svg>
+        <li
+          class="ProgressBar-step"
+          :class="{ 'is-complete': isComplete('2') }"
+        >
+          <svg class="ProgressBar-icon">
+            <use xlink:href="#checkmark-bold" />
+          </svg>
           <span class="ProgressBar-stepLabel">Admin User</span>
         </li>
-        <li class="ProgressBar-step" :class="{ 'is-complete': isComplete('3')}">
-          <svg class="ProgressBar-icon"><use xlink:href="#checkmark-bold"/></svg>
+        <li
+          class="ProgressBar-step"
+          :class="{ 'is-complete': isComplete('3') }"
+        >
+          <svg class="ProgressBar-icon">
+            <use xlink:href="#checkmark-bold" />
+          </svg>
           <span class="ProgressBar-stepLabel">Regular User</span>
         </li>
       </ol>
@@ -23,28 +35,34 @@
 export default {
   name: "progressCircles",
   props: {
-   stepNum: String
+    stepNum: String
   },
   methods: {
     isComplete: function(inputStep) {
-      if(inputStep === '1'){
-        if(this.stepNum === "" || this.stepNum === "/register/" || this.stepNum.includes("1") || this.stepNum.includes("2") || this.stepNum.includes("3")){
-          return true
-        }else{
-          return false
+      if (inputStep === "1") {
+        if (
+          this.stepNum === "" ||
+          this.stepNum === "/register/" ||
+          this.stepNum.includes("1") ||
+          this.stepNum.includes("2") ||
+          this.stepNum.includes("3")
+        ) {
+          return true;
+        } else {
+          return false;
         }
-      }else if (inputStep === '2'){
-        console.log(this.stepNum)
-        if(this.stepNum.includes('2') || this.stepNum.includes("3")){
-          return true
-        }else{
-          false
+      } else if (inputStep === "2") {
+        console.log(this.stepNum);
+        if (this.stepNum.includes("2") || this.stepNum.includes("3")) {
+          return true;
+        } else {
+          false;
         }
-      }else if (inputStep === '3'){
-        if(this.stepNum.includes("3")){
-          return true
-        }else{
-          return false
+      } else if (inputStep === "3") {
+        if (this.stepNum.includes("3")) {
+          return true;
+        } else {
+          return false;
         }
       }
     }
@@ -67,7 +85,8 @@ export default {
   position: relative;
   width: 100%;
 }
-.ProgressBar-step:before, .ProgressBar-step:after {
+.ProgressBar-step:before,
+.ProgressBar-step:after {
   content: "";
   height: 0.5em;
   background-color: #9f9fa3;
@@ -77,17 +96,19 @@ export default {
   left: -50%;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   transition: all 0.25s ease-out;
 }
-.ProgressBar-step:first-child:before, .ProgressBar-step:first-child:after {
+.ProgressBar-step:first-child:before,
+.ProgressBar-step:first-child:after {
   display: none;
 }
 .ProgressBar-step:after {
   background-color: #00637c;
   width: 0%;
 }
-.ProgressBar-step.is-complete + .ProgressBar-step.is-current:after, .ProgressBar-step.is-complete + .ProgressBar-step.is-complete:after {
+.ProgressBar-step.is-complete + .ProgressBar-step.is-current:after,
+.ProgressBar-step.is-complete + .ProgressBar-step.is-complete:after {
   width: 100%;
 }
 
@@ -121,7 +142,8 @@ export default {
   width: 100%;
   transition: all 0.25s ease-out;
 }
-.is-current > .ProgressBar-stepLabel, .is-complete > .ProgressBar-stepLabel {
+.is-current > .ProgressBar-stepLabel,
+.is-complete > .ProgressBar-stepLabel {
   color: #00637c;
 }
 

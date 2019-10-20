@@ -17,7 +17,6 @@ export default new Router({
     },
     {
       path: "/home",
-      name: "home",
       component: Home
     },
     {
@@ -36,12 +35,11 @@ export default new Router({
     },
     {
       path: "/register",
-      name: "register",
       component: Register,
       children: [
-        {path: '', component: BusinessDetails},
-        {path: '1', component: BusinessDetails},
-        {path: '2', component: AdminDetails}
+        { path: "", component: BusinessDetails },
+        { path: "1", component: BusinessDetails },
+        { path: "2", component: AdminDetails }
       ]
     }
   ]
