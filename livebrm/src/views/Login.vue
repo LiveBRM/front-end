@@ -34,7 +34,7 @@
         </div>
         <button type="submit" class="btn btn-primary mb-2">Login</button>
         <br />
-        <router-link to="/register">Create New Account</router-link>
+        <router-link to="/register">Getting Started</router-link>
       </form>
     </div>
   </div>

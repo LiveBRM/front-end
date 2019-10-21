@@ -133,8 +133,7 @@ export default {
 </script>
 
 <style scoped>
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
+/* large devices (portrait tablets and large phones, 576px and up) */
 @media only screen and (min-width: 576px) {
   .formLabel {
     text-align: right!important;

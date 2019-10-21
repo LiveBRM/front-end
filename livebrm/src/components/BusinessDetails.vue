@@ -11,7 +11,7 @@
       <form id="form">
         <div class="form-group">
           <div class="row align-items-center">
-            <div class="col-sm-4 col-form-label">
+            <div class="col-sm-4 col-form-label formLabel">
               <label for="commmonNameInput">Business Common Name</label>
             </div>
             <div class="col">
@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="row align-items-center">
-            <div class="col-sm-4 col-form-label">
+            <div class="col-sm-4 col-form-label formLabel">
               <label for="legalName">Business Legal Name</label>
             </div>
             <div class="col">
@@ -42,7 +42,7 @@
         </div>
         <div class="form-group">
           <div class="row align-items-center">
-            <div class="col-sm-4 col-form-label">
+            <div class="col-sm-4 col-form-label formLabel">
               <label for="commmonNameInput">Contact Email</label>
             </div>
             <div class="col">
@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="row align-items-center">
-            <div class="col-sm-4 col-form-label">
+            <div class="col-sm-4 col-form-label formLabel">
               <label for="phoneNumber">Contact Phone</label>
             </div>
             <div class="col">
@@ -178,3 +178,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+/* large devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+  .formLabel {
+    text-align: right!important;
+  }
+}
+</style>
