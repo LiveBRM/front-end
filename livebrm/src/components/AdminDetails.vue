@@ -11,7 +11,7 @@
       <form id="form">
         <div class="form-group">
           <div class="row align-items-center">
-            <div class="col-sm-3 col-form-label">
+            <div class="col-sm-3 col-form-label text-right">
               <label for="firstName">Name</label>
             </div>
             <div class="col">
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="row align-items-center">
-          <div class="col-sm-3 col-form-label">
+          <div class="col-sm-3 col-form-label text-right">
             <label for="email">Email</label>
           </div>
           <div class="col-sm-9">
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="row align-items-center">
-          <div class="col-sm-3 col-form-label">
+          <div class="col-sm-3 col-form-label text-right">
             <label for="username">Admin Username</label>
           </div>
           <div class="col-sm-9">
@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="row align-items-center">
-          <div class="col-sm-3 col-form-label">
+          <div class="col-sm-3 col-form-label text-right">
             <label for="password">Admin Password</label>
           </div>
           <div class="col-sm-9">
@@ -77,7 +77,7 @@
           </div>
         </div>
         <div class="row align-items-center">
-          <div class="col-sm-3 col-form-label">
+          <div class="col-sm-3 col-form-label text-right">
             <label for="confirmPassword">Confirm Password</label>
           </div>
           <div class="col-sm-9">
