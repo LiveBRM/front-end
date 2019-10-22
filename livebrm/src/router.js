@@ -5,6 +5,7 @@ import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
 import BusinessDetails from "./components/BusinessDetails.vue";
 import AdminDetails from "./components/AdminDetails.vue";
+import RegularDetails from "./components/RegularDetails.vue"
 
 Vue.use(Router);
 
@@ -39,7 +40,8 @@ export default new Router({
       children: [
         { path: "", component: BusinessDetails },
         { path: "1", component: BusinessDetails },
-        { path: "2", component: AdminDetails }
+        { path: "2", component: AdminDetails },
+        { path: "3", component: RegularDetails }
       ]
     }
   ]

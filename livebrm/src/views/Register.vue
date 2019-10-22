@@ -12,11 +12,7 @@ export default {
   name: "register",
   data() {
     return {
-      email: "",
-      user: "",
-      password: "",
-      confirmPassword: "",
-      step: ""
+      createData: []
     };
   },
   created() {

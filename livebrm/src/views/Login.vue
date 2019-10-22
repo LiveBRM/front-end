@@ -74,6 +74,7 @@ export const HTTP = axios.create({
 });
 </script>
 
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 /* Extra small devices (phones, 600px and down) */

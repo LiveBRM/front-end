@@ -6,7 +6,7 @@
       style="width: 100%; max-width: 700px"
     >
       <div class="mb-3">
-        <h3>Create Admin User</h3>
+        <h3>Create Regular User</h3>
       </div>
       <form id="form">
         <div class="form-group">
@@ -16,7 +16,7 @@
             </div>
             <div class="col">
               <input
-                v-model="admin_f_name"
+                v-model="firstName"
                 type="text"
                 class="form-control"
                 id="firstName"
@@ -25,7 +25,7 @@
             </div>
             <div class="col">
               <input
-                v-model="admin_l_name"
+                v-model="lastname"
                 type="text"
                 class="form-control"
                 id="lastName"
@@ -40,7 +40,7 @@
           </div>
           <div class="col-sm-9">
             <input
-              v-model="admin_email1"
+              v-model="email"
               type="email"
               class="form-control"
               id="email"
@@ -50,11 +50,11 @@
         </div>
         <div class="row align-items-center">
           <div class="col-sm-3 col-form-label formLabel">
-            <label for="username">Admin Username</label>
+            <label for="username">Username</label>
           </div>
           <div class="col-sm-9">
             <input
-              v-model="admin_user"
+              v-model="commonName"
               type="username"
               class="form-control"
               id="username"
@@ -64,11 +64,11 @@
         </div>
         <div class="row align-items-center">
           <div class="col-sm-3 col-form-label formLabel">
-            <label for="password">Admin Password</label>
+            <label for="password">Password</label>
           </div>
           <div class="col-sm-9">
             <input
-              v-model="admin_password"
+              v-model="adminPassword"
               type="password"
               class="form-control"
               id="password"
@@ -82,7 +82,7 @@
           </div>
           <div class="col-sm-9">
             <input
-              v-model="admin_password_confirm"
+              v-model="adminConfirmPassword"
               type="password"
               class="form-control"
               id="confirmPassword"
@@ -92,14 +92,12 @@
         </div>
         <div class="row align-items-center mt-2">
           <div class="col">
-            <router-link class="btn btn-link previous" to="/register/1"
+            <router-link class="btn btn-link previous" to="/register/2"
               >Back</router-link
             >
           </div>
           <div class="col">
-            <router-link id="advance" class="btn btn-primary" to="/register/3/" v-on:click="checkTaken()">
-              Next
-            </router-link>
+            <button class="btn btn-primary advance">Submit</button>
           </div>
         </div>
         <br />
@@ -109,40 +107,42 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "adminDetails",
   data() {
     return {
-      admin_user: "",
-      admin_password: "",
-      admin_password_confirm: "",
-      admin_f_name: "",
-      admin_l_name: "",
-      admin_email1: "",
-      result: "",
+      reg_f_name: "",
+      reg_k_name: "",
+      reg_email: "",
+      reg_username: "",
+      reg_password: "",
+      reg_password_confirm: ""
     };
   },
   methods: {
-    checkTaken: function(){
-      if ( $('#advance').is(":focus")) {
-        //send HTTP request to see if it's taken
-        http.request({
-          url: "http://192.168.56.101/tenants/onboard",
+    sendRequest: function(){
+      http.request({
+        url: "https://httpbin.org/post",
           method: "POST",
           headers: { "Content-Type": "application/json" },
           content: JSON.stringify({
-            admin_email: this.admin_email1
+            reg_f_name: "",
+            reg_k_name: "",
+            reg_email: "",
+            reg_username: "",
+            reg_password: "",
+            reg_password_confirm: ""
           })
-        }).then(response => {
-          var result = response.content.toJSON();
-          console.log(result);
+      }).then(response => {
+        this.result = response.content.toJSON();
         }, error => {
-          console.error(error);
-        });
-      }
+        console.error(error);
+      });
     }
   },
+  updated(){
+    this.checkActive();
+  }
 };
 </script>
 

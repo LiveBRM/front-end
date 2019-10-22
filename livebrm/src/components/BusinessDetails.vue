@@ -16,7 +16,7 @@
             </div>
             <div class="col">
               <input
-                v-model="commonName"
+                v-model="common_name"
                 type="username"
                 class="form-control"
                 id="commonNameInput"
@@ -27,14 +27,14 @@
           </div>
           <div class="row align-items-center">
             <div class="col-sm-4 col-form-label formLabel">
-              <label for="legalName">Business Legal Name</label>
+              <label for="legal_name">Business Legal Name</label>
             </div>
             <div class="col">
               <input
-                v-model="user"
+                v-model="legal_name"
                 type="username"
                 class="form-control"
-                id="legalName"
+                id="legal_name"
                 placeholder="Awesome DJ Company, LLC"
               />
             </div>
@@ -47,7 +47,7 @@
             </div>
             <div class="col">
               <input
-                v-model="contactEmail"
+                v-model="contact_email"
                 type="email"
                 class="form-control"
                 id="email"
@@ -61,7 +61,7 @@
             </div>
             <div class="col">
               <input
-                v-model="contactPhoneNumber"
+                v-model="phone_number"
                 type="phoneNumber"
                 class="form-control"
                 id="phoneNumber"
@@ -73,14 +73,14 @@
         <div class="form-group">
           <label for="address1">Address</label>
           <input
-            v-model="addressLine1"
+            v-model="address_line_one"
             type="address"
             class="form-control"
             id="address1"
             placeholder="Address Line 1"
           />
           <input
-            v-model="addressLine2"
+            v-model="address_line_two"
             type="address"
             class="form-control mt-2"
             id="address2"
@@ -100,10 +100,10 @@
             </div>
             <div class="col">
               <input
-                v-model="stateOrProvince"
+                v-model="province"
                 type="state"
                 class="form-control"
-                id="stateOrProvince"
+                id="province"
                 placeholder="State/Province"
               />
             </div>
@@ -111,7 +111,7 @@
           <div class="row mt-2">
             <div class="col">
               <input
-                v-model="postalCode"
+                v-model="postal_code"
                 type="postalCode"
                 class="form-control"
                 id="postalCode"
@@ -152,18 +152,16 @@ export default {
   name: "businessDetails",
   data() {
     return {
-      commonName: "",
-      legalName: "",
-      addressLine1: "",
-      addressLine2: "",
+      common_name: "",
+      legal_name: "",
+      address_line_one: "",
+      address_line_two: "",
       city: "",
-      stateOrProvince: "",
-      postalCode: "",
+      province: "",
+      postal_code: "",
       country: "",
-      contactEmail: "",
-      contactPhoneNumber: "",
-      emergencyContactPhone: "",
-      normalBusinessPhone: ""
+      contact_email: "",
+      phone_number: "",
     };
   },
   methods: {
